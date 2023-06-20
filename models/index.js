@@ -3,6 +3,7 @@ const Department = require('./department');
 const User = require('./user');
 const Incident = require('./incident');
 const Assist = require('./assist');
+const Incidents = require('./incidents');
 
 Employee.belongsTo(Department, {
   foreignKey: 'id_department',
@@ -52,4 +53,4 @@ Incident.hasOne(Assist, {
   foreignKey: 'id_incident',
 });
 
-module.exports = { Employee, Department, User, Incident, Assist };
+module.exports = { Employee, Department, User, Incident, Assist, Incidents };

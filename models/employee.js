@@ -1,6 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const { Department } = require('./department');
 
 class Employee extends Model {}
 
@@ -114,13 +113,8 @@ Employee.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'employee',
+    modelName: 'Employee',
   }
 );
-
-Employee.belongsTo(Department, {
-  foreignKey: 'id_department',
-  onDelete: 'CASCADE',
-});
 
 module.exports = Employee;
