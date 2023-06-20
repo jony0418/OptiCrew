@@ -1,16 +1,55 @@
-const Sequelize = require('sequelize');
-require('dotenv').config();
+const Employee = require('./employee');
+const Department = require('./department');
+const User = require('./user');
+const Incident = require('./incident');
+const Assist = require('./assist');
 
-let sequelize;
+Employee.belongsTo(Department, {
+  foreignKey: 'id_department',
+  onDelete: 'CASCADE',
+});
 
-if (process.env.JAWSDB_URL) {
-  sequelize = new Sequelize(process.env.JAWSDB_URL);
-} else {
-  sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
-    host: 'localhost',
-    dialect: 'mysql',
-    port: 3306
-  });
-}
+Department.hasMany(Employee, {
+  foreignKey: 'id_department',
+  onDelete: 'CASCADE',
+});
 
-module.exports = sequelize;
+Incident.belongsTo(Employee, {
+  foreignKey: 'id_employee',
+  onDelete: 'CASCADE',
+});
+
+Employee.hasMany(Incident, {
+  foreignKey: 'id_employee',
+  onDelete: 'CASCADE',
+});
+
+Incident.belongsTo(User, {
+  foreignKey: 'id_user',
+  onDelete: 'SET NULL',
+});
+
+User.hasMany(Incident, {
+  foreignKey: 'id_user',
+});
+
+Assist.belongsTo(Employee, {
+  foreignKey: 'id_employee',
+  onDelete: 'CASCADE',
+});
+
+Employee.hasMany(Assist, {
+  foreignKey: 'id_employee',
+  onDelete: 'CASCADE',
+});
+
+Assist.belongsTo(Incident, {
+  foreignKey: 'id_incident',
+  onDelete: 'SET NULL',
+});
+
+Incident.hasOne(Assist, {
+  foreignKey: 'id_incident',
+});
+
+module.exports = { Employee, Department, User, Incident, Assist };
