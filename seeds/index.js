@@ -10,6 +10,7 @@ const sequelize = require('../config/connection');
 const seedAll = async () => {
   await sequelize.sync({ force: true });
   console.log('\n----- DATABASE SYNCED -----\n');
+  
   await seedEmployees();
   console.log('\n----- EMPLOYEES SEEDED -----\n');
 
@@ -24,7 +25,7 @@ const seedAll = async () => {
 
   await seedAssist();
   console.log('\n----- ASSIST SEEDED -----\n');
-  
+
   await seedIncident();
   console.log('\n----- INCIDENT SEEDED -----\n');
 
