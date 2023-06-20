@@ -1,7 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const Employee = require('./employee');
-const User = require('./user');
 
 class Incident extends Model {}
 
@@ -53,20 +51,8 @@ Incident.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'incident',
+    modelName: 'Incident',
   }
 );
-
-// Add this after the Incident model definition:
-
-Incident.belongsTo(Employee, {
-  foreignKey: 'id_employee',
-  onDelete: 'CASCADE',
-});
-
-Incident.belongsTo(User, {
-  foreignKey: 'id_user',
-  onDelete: 'SET NULL',
-});
 
 module.exports = Incident;

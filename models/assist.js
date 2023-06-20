@@ -1,7 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const Employee = require('./employee');
-const Incident = require('./incident');
 
 class Assist extends Model {}
 
@@ -49,20 +47,8 @@ Assist.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'assist',
+    modelName: 'Assist',
   }
 );
-
-// Add this after the Assist model definition:
-
-Assist.belongsTo(Employee, {
-  foreignKey: 'id_employee',
-  onDelete: 'CASCADE',
-});
-
-Assist.belongsTo(Incident, {
-  foreignKey: 'id_incident',
-  onDelete: 'SET NULL',
-});
 
 module.exports = Assist;
