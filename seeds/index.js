@@ -16,18 +16,18 @@ const seedAll = async () => {
 
   await seedEmployees();
   console.log('\n----- EMPLOYEES SEEDED -----\n');
+  
+  await seedUser();
+  console.log('\n----- USER SEEDED -----\n');
+
+  await seedIncident();
+  console.log('\n----- INCIDENT SEEDED -----\n');
 
   await seedIncidents();
   console.log('\n----- INCIDENTS SEEDED -----\n');
 
-  await seedUser();
-  console.log('\n----- USER SEEDED -----\n');
-
   await seedAssist();
   console.log('\n----- ASSIST SEEDED -----\n');
-
-  await seedIncident();
-  console.log('\n----- INCIDENT SEEDED -----\n');
 
 
   process.exit(0);

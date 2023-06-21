@@ -1,9 +1,10 @@
-const router = express('express').Router(); 
+const express = require('express');
+const router = express.Router();
 
-//Get all the possible options from the homepage 
-router.get('/', async (req, res) => {
-    res.send('Welcome to the home, page')
-})
+// Define routes
+router.get('/', (req, res) => {
+  // Handle the home route logic
+});
 
-//get one specific action
-
+// Export the router
+module.exports = router;

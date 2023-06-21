@@ -15,7 +15,9 @@ Employee.belongsTo(Department, {
   onDelete: 'CASCADE',
 });
 
-
+User.hasMany(Incident, {
+  foreignKey: 'id_user',
+});
 
 Incident.belongsTo(Employee, {
   foreignKey: 'id_employee',
@@ -30,10 +32,6 @@ Employee.hasMany(Incident, {
 Incident.belongsTo(User, {
   foreignKey: 'id_user',
   onDelete: 'SET NULL',
-});
-
-User.hasMany(Incident, {
-  foreignKey: 'id_user',
 });
 
 Assist.belongsTo(Employee, {
