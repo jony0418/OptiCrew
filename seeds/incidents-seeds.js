@@ -1,4 +1,4 @@
-const { incidents } = require('../models');
+const { Incidents } = require('../models');
 
 const incidentsData = [
 {
@@ -53,6 +53,6 @@ const incidentsData = [
   // ...more data...
 ];
 
-const seedIncidents = () => incidents.bulkCreate(incidentsData);
+const seedIncidents = () => Incidents.bulkCreate(incidentsData);
 
 module.exports = seedIncidents;
