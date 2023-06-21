@@ -15,6 +15,20 @@ router.get('/', async (req, res) => {
 })
 
 // create new employee
+router.post('/', async (req, res) => {
+    try {
+        //get the employee data from the request body
+        const employeeData = req.body; 
+        //create a new employee using the employee model 
+        const employee = await Employee.create(employeeData); 
+
+        //return the created employee as the response
+        return res.status(201).json(employee); 
+    } catch (error) {
+        console.log(error); 
+        return res.status(500).json({ error: 'Failed to create employee'}); 
+    }
+}); 
 
 
 module.exports = router; 
