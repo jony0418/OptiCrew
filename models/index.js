@@ -1,19 +1,21 @@
-const Employee = require('./employee');
 const Department = require('./department');
+const Employee = require('./employee');
 const User = require('./user');
 const Incident = require('./incident');
 const Assist = require('./assist');
 const Incidents = require('./incidents');
+
+Department.hasMany(Employee, {
+  foreignKey: 'id_department',
+  onDelete: 'CASCADE',
+});
 
 Employee.belongsTo(Department, {
   foreignKey: 'id_department',
   onDelete: 'CASCADE',
 });
 
-Department.hasMany(Employee, {
-  foreignKey: 'id_department',
-  onDelete: 'CASCADE',
-});
+
 
 Incident.belongsTo(Employee, {
   foreignKey: 'id_employee',
