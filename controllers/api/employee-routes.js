@@ -15,3 +15,6 @@ router.get('/', async (req, res) => {
 })
 
 // create new employee
+
+
+module.exports = router; 
