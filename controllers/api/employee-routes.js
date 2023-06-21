@@ -30,5 +30,27 @@ router.post('/', async (req, res) => {
     }
 }); 
 
+//get by id 
+router.get('/:id', async (req, res) => {
+    try {
+      const { id } = req.params;
+  
+      // Retrieve the employee from the database based on the provided ID
+      const employee = await Employee.findByPk(id);
+  
+      if (!employee) {
+        return res.status(404).json({ error: 'Employee not found' });
+      }
+  
+      res.status(200).json(employee);
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({ error: 'Failed to retrieve employee' });
+    }
+});
+  
+
+
+
 
 module.exports = router; 
