@@ -79,3 +79,17 @@ body {
     color: #0099FF;
   }
   
+  .backImg {
+    background-image: url(/img/employee-database.jpg);
+    width: 100%;
+    height: 500px;
+  }
+
+  .navbarLogo {
+    align-items: flex-start;
+  }
+
+  
+.header {
+  background-color: black;
+}
