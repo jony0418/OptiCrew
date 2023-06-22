@@ -48,6 +48,29 @@ router.get('/:id', async (req, res) => {
       res.status(500).json({ error: 'Failed to retrieve employee' });
     }
 });
+
+//update employee by id
+router.put('/:id', async (req, res) => {
+    try {
+        const { id } = req.params; 
+        const employeeData = req.body; 
+
+        //find the employee by id
+        const employee = await Employee.findByPk(id); 
+
+        //if employee doesnt exist, return error
+        if (!employee) {
+            return res.status(404).json({ error: 'Employee not found' }); 
+        }
+        //update the employee information
+        await employee.update(employeeData); 
+
+        return res.status(200).json(employee); 
+    } catch (error) {
+        console.log(error); 
+        return res.status(500).json({ error: 'Failed to update employee' }); 
+    }
+}); 
   
 
 
