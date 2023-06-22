@@ -3,7 +3,6 @@ const seedEmployees = require('./employee-seeds');
 const seedIncident = require('./incident-seeds');
 const seedUser = require('./user-seeds');
 const seedAssist = require('./assist-seeds');
-const seedIncidents = require('./incidents-seeds');
 
 const sequelize = require('../config/connection');
 
@@ -22,9 +21,6 @@ const seedAll = async () => {
 
   await seedIncident();
   console.log('\n----- INCIDENT SEEDED -----\n');
-
-  await seedIncidents();
-  console.log('\n----- INCIDENTS SEEDED -----\n');
 
   await seedAssist();
   console.log('\n----- ASSIST SEEDED -----\n');
