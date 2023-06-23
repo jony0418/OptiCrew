@@ -4,25 +4,28 @@ document.getElementById('newEmployeeForm').addEventListener('submit', function(e
   // create a new FormData object
   var formData = new FormData(event.target);
   
+  // create a new object to send as JSON
+  var newEmployee = {};
+  formData.forEach((value, key) => {
+    // Convert "true" and "false" strings to boolean values
+    if (value === "true") value = true;
+    else if (value === "false") value = false;
+    
+    newEmployee[key] = value;
+  });
+
   // make an AJAX request
-  var xhr = new XMLHttpRequest();
-  xhr.open('POST', '/employee', true);
-  
-  xhr.onload = function () {
-    if (xhr.status >= 200 && xhr.status < 400) {
-      // Success!
-      var response = JSON.parse(xhr.responseText);
-      console.log(response);
-    } else {
-      // We reached our target server, but it returned an error
-      console.error('Server error', xhr);
-    }
-  };
-  
-  xhr.onerror = function() {
-    // There was a connection error of some sort
-    console.error('Connection error', xhr);
-  };
-  
-  xhr.send(formData);
+  fetch('/employee', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(newEmployee)
+  })
+  .then(response => {
+    if (!response.ok) throw new Error('Network response was not ok');
+    return response.json();
+  })
+  .then(data => console.log(data))
+  .catch(error => console.error('Error:', error));
 });
