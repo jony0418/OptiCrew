@@ -11,7 +11,7 @@ Employee.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    assit: {
+    assist: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
