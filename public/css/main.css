@@ -1,52 +1,10 @@
-* {
-font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
+/* 
   header {
     background-color: #0099FF;
     padding: 40px;
     text-align: center;
-  }
+  } */
   
-  .features {
-    background-color: #ffffff;
-    padding: 40px;
-    text-align: center;
-  }
+
   
-  .cta {
-    background-color: #f2f2f2;
-    padding: 40px;
-    text-align: center;
-  }
-  
-  form {
-    margin-top: 20px;
-  }
-  
-  input[type="email"] {
-    padding: 10px;
-    width: 300px;
-  }
-  
-  button {
-    padding: 10px 20px;
-    background-color: #0099FF;
-    color: #ffffff;
-    border: none;
-    cursor: pointer;
-  }
-  
-  footer {
-    background-color: #f2f2f2;
-    padding: 20px;
-    text-align: center;
-  }
   
