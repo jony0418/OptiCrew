@@ -3,8 +3,6 @@ const Employee = require('./employee');
 const User = require('./user');
 const Incident = require('./incident');
 const Assist = require('./assist');
-const Incidents = require('./incidents');
-
 Department.hasMany(Employee, {
   foreignKey: 'id_department',
   onDelete: 'CASCADE',
@@ -49,8 +47,8 @@ Assist.belongsTo(Incident, {
   onDelete: 'SET NULL',
 });
 
-Incident.hasOne(Assist, {
+Incident.hasMany(Assist, {
   foreignKey: 'id_incident',
 });
 
-module.exports = { Employee, Department, User, Incident, Assist, Incidents };
+module.exports = { Employee, Department, User, Incident, Assist };
