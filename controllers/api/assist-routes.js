@@ -8,11 +8,11 @@ router.get('/assist/:id', (req, res) => {
       id_employee: req.params.id
     },
     include: [
-      {
+      { //employee name
         model: Employee,
         attributes: ['name']
       },
-      {
+      { //incident date and type if there is
         model: Incident,
         attributes: ['date', 'type']
       }
