@@ -15,7 +15,17 @@ router.get('/', (req, res) => {
 router.get('/login', (req, res) => {
   // Handle the home route logic
   res.render('login')
+  
 });
 
+
+// 
+// 
+
+router.get('/signUp', (req, res) => {
+  // Handle the home route logic
+  res.render('/signUp')
+  
+});
 // Export the router
 module.exports = router;
