@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>New Employee</title>
+<style>
+body {
+  background-color: #F5F5F5;
+  font-family: Arial, sans-serif;
+}
+
+.form-grid {
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em;
+  padding: 2em;
+  border-radius: 15px;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 2em auto;
+}
+
+.form-grid label {
+  font-weight: bold;
+  color: #333;
+}
+
+.form-grid input,
+.form-grid select,
+.form-grid textarea {
+  width: 100%;
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form-grid input[type="radio"] {
+  width: auto;
+}
+
+.form-grid button {
+  padding: 0.5em 1em;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-grid button:hover {
+  background-color: #555;
+}
+</style>
+
+</head>
+<body>
+  <form id="newEmployeeForm" class="form-grid">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required />
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" required />
+
+    <label for="shift">Shift:</label>
+    <select id="shift" name="shift" required>
+      <option value="">--Please choose an option--</option>
+      <option value="Morning">Morning</option>
+      <option value="Afternoon">Afternoon</option>
+      <option value="Night">Night</option>
+    </select>
+
+    <!-- Add the rest of the form elements similarly... -->
+    <!-- Continue with the rest of the form elements -->
+
+  <label for="gender">Gender:</label>
+  <div id="gender">
+    <input type="radio" id="male" name="gender" value="Male" required />
+    <label for="male">Male</label><br>
+    <input type="radio" id="female" name="gender" value="Female" required />
+    <label for="female">Female</label><br>
+  </div>
+
+  <label for="birth">Birth Date:</label>
+  <input type="date" id="birth" name="birth" required />
+
+  <label for="address">Address:</label>
+  <input type="text" id="address" name="address" required />
+
+  <label for="county">County:</label>
+  <input type="text" id="county" name="county" required />
+
+  <label for="zipCode">Zip Code:</label>
+  <input type="text" id="zipCode" name="zipCode" required />
+
+  <label for="city">City:</label>
+  <input type="text" id="city" name="city" required />
+
+  <label for="cel">Cell Phone:</label>
+  <input type="tel" id="cel" name="cel" required />
+
+  <label for="education">Education:</label>
+  <input type="text" id="education" name="education" required />
+
+  <label for="id_department">Department ID:</label>
+  <input type="number" id="id_department" name="id_department" required />
+
+  <label for="supervisor">Supervisor:</label>
+  <input type="text" id="supervisor" name="supervisor" required />
+
+  <label for="position">Position:</label>
+  <input type="text" id="position" name="position" required />
+
+  <label for="admissionDate">Admission Date:</label>
+  <input type="date" id="admissionDate" name="admissionDate" required />
+
+  <label for="vacations">Vacations (days):</label>
+  <input type="number" id="vacations" name="vacations" required />
+
+  <label for="code">Code:</label>
+  <input type="text" id="code" name="code" required />
+
+  <label for="active">Active:</label>
+  <div id="active">
+    <input type="radio" id="isActive" name="active" value="true" required />
+    <label for="isActive">Yes</label><br>
+    <input type="radio" id="isNotActive" name="active" value="false" required />
+    <label for="isNotActive">No</label><br>
+  </div>
+
+  <label for="ssn">Social Security Number:</label>
+  <input type="text" id="ssn" name="ssn" required />
+
+  <label for="income">Income:</label>
+  <input type="number" step="0.01" id="income" name="income" required />
+
+  <label for="type">Type:</label>
+  <input type="text" id="type" name="type" required />
+
+  <label for="class">Class:</label>
+  <input type="text" id="class" name="class" required />
+
+  <button type="submit">Submit</button>
+  </form>
+
+    <script src="script.js"></script>
+  </body>
+</html>
