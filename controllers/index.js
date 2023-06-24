@@ -1,14 +1,15 @@
-const express = require('express'); 
-const router = require('express').Router(); 
+const express = require('express');
+const router = require('express').Router();
 
-//import routes
-const homeRoutes = require('./home-routes'); 
+// Import routes
+const homeRoutes = require('./home-routes');
 const employeeRoutes = require('./api/employee-routes');
-const assistRoutes = require('./api/assist-routes'); 
+const assistRoutes = require('./api/assist-routes'); // Corrected filename
 
 router.use('/', homeRoutes);
-router.use('/employee', employeeRoutes); 
-router.use('/assist', assistRoutes); 
+router.use('/employee', employeeRoutes);
+router.use('/assist', assistRoutes);
 
-//exports the router
-module.exports = router; 
+// Export the router
+module.exports = router;
+
