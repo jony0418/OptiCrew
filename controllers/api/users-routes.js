@@ -5,6 +5,8 @@ const { User } = require('../../models');
 
 // create new user
 router.post('/', async (req, res) => {
+
+    console.log("Submitted Data: ", req.body)
     try {
         //get the user data from the request body
         const userData = req.body; 

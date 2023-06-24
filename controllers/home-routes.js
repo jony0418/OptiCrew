@@ -22,9 +22,9 @@ router.get('/login', (req, res) => {
 // 
 // 
 
-router.get('/signUp', (req, res) => {
+router.get('/signup', (req, res) => {
   // Handle the home route logic
-  res.render('/signUp')
+  res.render('SignUp')
   
 });
 // Export the router
