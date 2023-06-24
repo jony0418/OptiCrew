@@ -28,6 +28,17 @@ router.get('/assist/:id', async (req, res) => {
   }
 }); 
 
+router.get('/assist', async (req, res) => {
+  try {
+    const assists = await Assist.findAll();
+    res.json(assists);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+module.exports = router;
 
 
 module.exports = router;
