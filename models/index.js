@@ -3,6 +3,8 @@ const Employee = require('./employee');
 const User = require('./user');
 const Incident = require('./incident');
 const Assist = require('./assist');
+
+
 Department.hasMany(Employee, {
   foreignKey: 'id_department',
   onDelete: 'CASCADE',
