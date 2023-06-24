@@ -7,15 +7,16 @@
 body {
     margin: 0;
     padding: 0;
+    width: 100%;
     font-family: sans-serif;
     background: #34495e;
   }
   
   .login-box {
-    /* position: absolute; */
+    /* position: absolute; 
     top: 50%;
     left: 50%;
-    width: 400px;
+    width: 400px;*/
     padding: 40px;
     /* transform: translate(-50%, -50%); */
     background: rgba(0, 0, 0, 0.8);
@@ -85,6 +86,10 @@ body {
     color: #0099FF;
   }
   
+  .sign-up {
+    color: #fff;
+  }
+
   .backImg {
     background-image: url(/img/employee-database.jpg);
     background-size: cover;
@@ -93,6 +98,13 @@ body {
     height: 300px;
     opacity: .9;
   }
+
+.backBox {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
 
   .firstSection {
     padding: 40px;
@@ -105,6 +117,35 @@ body {
     width: 100%;
     height: 300px;
     opacity: .9;
+  }
+
+  .firstSection h1 {
+    font-size: 3rem;
+  color: var(--black);
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 50px;
+  font-family: 'Bebas Neue', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  animation: neon 1.5s ease-in-out infinite alternate;
+  }
+
+  @keyframes neon {
+    from {
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #0077e6, 0 0 30px #006be6, 0 0 40px #0400e6, 0 0 55px #007fe6, 0 0 75px #009de6;
+    }
+    to {
+      text-shadow: none;
+    }
+  }
+
+  .firstSection p {
+    font-size: 1.5rem;
+  color: #777;
+  text-align: center;
+  margin-bottom: 50px;
+  background: linear-gradient(45deg, var(--blue), #f9d423);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   }
 
   .navbarLogo {
@@ -230,3 +271,40 @@ footer {
     cursor: pointer;
   }
 
+.iconSection {
+  display: flex;
+}
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+  text-decoration: none;
+  background-color: #0a582a;
+  color: #fff;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.iconContainer a {
+  background-color: var(--blue);
+  border-radius: 40px;
+  height: 40px;
+  width: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+/*MEDIA QUERIES TO MAKE THE DESIGN RESPONSIVE*/
+
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display:block;
+  }
+}

@@ -18,6 +18,9 @@ router.get('/login', (req, res) => {
   
 });
 
+router.get('/myprofile', (req, res) => {
+  res.render('myprofile')
+});
 
 // 
 // 

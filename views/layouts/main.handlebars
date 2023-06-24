@@ -25,9 +25,14 @@
       <ul class="menu">
         <li><a href="/about-us">About OptiCrew</a></li>
         <li><a href="/perks">Perks</a></li>
-        <li><a href="/login">Login</a></li>
         <li><a href="/signup">Signup</a></li>
-        <li><a href="#logout">Logout</a></li>
+        {{#if logged_in}}
+        <a href="/profile">profile</a>
+        <li><a href="/logout" id="logout">Logout</a></li>
+        {{else}}
+        <li><a href="/login" id="login">Login</a></li>
+        {{/if}}
+        
       </ul> 
         </nav>
 
@@ -43,5 +48,9 @@
  <p>&copy; 2023 OptiCrew. All rights reserved.</p>
 </footer>
 
+{{#if logged_in}}
+<script src="js/logout.js"></script>
+{{/if}}
+<script src="js/header.js"></script>
 </body>
 </html>
