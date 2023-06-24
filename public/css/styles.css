@@ -11,7 +11,8 @@ body {
     font-family: sans-serif;
     background: #34495e;
   }
-  
+
+  /* Styles for the login section */
   .login-box {
     /* position: absolute; 
     top: 50%;
@@ -90,32 +91,35 @@ body {
     color: #fff;
   }
 
+  /* Styles for the body of the homepage*/
   .backImg {
     background-image: url(/img/employee-database.jpg);
     background-size: cover;
     background-position: center;
-    width: 100%;
     height: 300px;
     opacity: .9;
   }
 
 .backBox {
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 20px;
+  padding: 40px;
   border-radius: 10px;
+  max-height: 200px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-  .firstSection {
-    padding: 40px;
+.firstSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 46px;
     text-align: center;
     border-color: var(--gray);
     border-style: dotted;
     background-image: url(/img/cover1.jpg);
     background-size: cover;
     background-position: center;
-    width: 100%;
-    height: 300px;
+    height: 450px;
     opacity: .9;
   }
 
@@ -124,7 +128,6 @@ body {
   color: var(--black);
   text-align: center;
   text-transform: uppercase;
-  margin-top: 50px;
   font-family: 'Bebas Neue', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   animation: neon 1.5s ease-in-out infinite alternate;
   }
@@ -139,27 +142,26 @@ body {
   }
 
   .firstSection p {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
   color: #777;
   text-align: center;
-  margin-bottom: 50px;
-  background: linear-gradient(45deg, var(--blue), #f9d423);
+  background: linear-gradient(45deg, var(--blue), var(--gray));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   }
 
-  .navbarLogo {
+.navbarLogo {
     align-items: flex-start;
     height: 60px;
     width: auto;
-    border-radius: 100px;
     padding: 5px;
 
-  }
+}
 
-  
+
 .mainHeader {
   display: flex;
+  flex-wrap: wrap;
   font-family: 'Bebas Neue', 'Lucida', 'Sans Serif';
   align-items: center;
   padding: 10px;
@@ -178,10 +180,14 @@ nav {
   padding: 10px;
 }
 
+.show {
+  display:flex
+}
+
 .line {
   width: 25px;
   height: 3px;
-  background-color: #fff;
+  background-color: var(--gray);
   margin: 5px 0;
 }
 
@@ -269,11 +275,8 @@ footer {
     color: #ffffff;
     border: none;
     cursor: pointer;
+    border-radius: 5px;
   }
-
-.iconSection {
-  display: flex;
-}
 
 .iconContainer {
   display: flex;
@@ -301,10 +304,83 @@ footer {
   justify-content: center;
 }
 
+/* Style for the Employee route */
+
+.employeeBackground {
+  display: flex;
+  background-image: url(/img/employee-database.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    opacity: .9;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logBackground {
+  display: flex;
+  background-image: url(/img/cover1.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    opacity: .9;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.employeeContainer {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 40px;
+  border-radius: 10px;
+  max-height: 200px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.appCont {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.icon img {
+  width: 80px;
+  height: 80px;
+}
+
+.icon p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #b81717;
+}
+
+
 /*MEDIA QUERIES TO MAKE THE DESIGN RESPONSIVE*/
 
 @media screen and (max-width: 768px) {
   .hamburger {
     display:block;
+  }
+
+  .mainHeader {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    flex-direction: column;
   }
 }
