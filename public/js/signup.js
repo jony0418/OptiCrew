@@ -14,9 +14,9 @@ const signupFormHandler = async (event) => {
         if (response.ok) {
             document.location.replace('/login'); 
         } else {
-            alert(response.statusText); 
+            alert('Failed to sign up'); 
         }
     }
 }; 
 
-document.querySelector('#submit-btn').addEventListener("submit", signupFormHandler);
+document.querySelector('.signup-form').addEventListener("submit", signupFormHandler);

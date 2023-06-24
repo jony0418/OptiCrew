@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
     } catch (error) {
         res.status(500).json({ error: 'Failed to retrieve employees'}); 
     }
-})
+});
 
 // create new employee
 router.post('/', async (req, res) => {
