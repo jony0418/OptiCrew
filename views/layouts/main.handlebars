@@ -14,7 +14,7 @@
 <body>
     <header class="mainHeader">
         {{!This will add the final logo}}
-        <a href="/"><img class="navbarLogo" src="/img/logo.png"></a>
+        <a href="/"><img class="navbarLogo" src="/img/OptiCrewColor.svg"></a>
 
         <nav>
            <div class="hamburger">
@@ -23,6 +23,7 @@
         <div class="line"></div>
       </div>
       <ul class="menu">
+        <li><a href="/employee">Management</a></li>
         <li><a href="/about-us">About OptiCrew</a></li>
         <li><a href="/perks">Perks</a></li>
         <li><a href="/signup">Signup</a></li>
@@ -51,6 +52,6 @@
 {{#if logged_in}}
 <script src="js/logout.js"></script>
 {{/if}}
-<script src="js/header.js"></script>
+<script src="./js/header.js"></script>
 </body>
 </html>
