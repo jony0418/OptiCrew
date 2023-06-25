@@ -11,12 +11,27 @@
     <img src="/img/icons/division.png" alt="Icon 2">
     <button id="appBtn">SEE ALL EMPLOYEES</button>
   </div>
+    <div class="icon">
+    <img src="/img/icons/employee.png" alt="Icon 3">
+    <button>ADD EMPLOYEE</button>
+  </div>
   <div class="icon">
-    <img src="/img/icons/medical-history.png" alt="Icon 3">
+    <img src="/img/icons/medical-history.png" alt="Icon 4">
     <button>SICK LEAVE</button>
   </div>
 </div>
 
+
+
+<div>
+<h1>Employee List</h1>
+<ul>
+  <li>{{name}}</li>
+  {{#each employee}}
+    <li>{{this.name}}</li>
+  {{/each}}
+</ul>
+</div>
 
 </div>
 </div>
