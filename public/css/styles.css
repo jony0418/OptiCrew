@@ -207,41 +207,44 @@ body {
   align-items: center;
   padding: 10px;
   justify-content: flex-start;
-  background-image: linear-gradient(to bottom right, var(--blue), var(--black));
+  background-image: linear-gradient(to right, var(--blue), var(--black));
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 nav {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
-.hamburger {
-  display: none; /* Hide the hamburger menu on larger screens */
+.hamburgerIcon {
+  display: none;
   cursor: pointer;
   padding: 10px;
 }
 
-.show {
-  display:flex
+.hidden {
+  display:none
 }
 
-.line {
+.hamburgerLine {
   width: 25px;
   height: 3px;
   background-color: var(--gray);
   margin: 5px 0;
 }
 
-.menu {
+.mainMenu {
   display: flex;
   list-style-type: none;
 }
 
-.menu li {
+.mainMenu li {
   margin-right: 10px;
 }
 
-.menu li a {
+.mainMenu li a {
   color: var(--black);
   padding: 30px;
   text-decoration: none;
@@ -250,7 +253,7 @@ nav {
   font-family: 'Bebas Neue', 'Lucida', 'Sans Serif';
 }
 
-.menu li a:hover {
+.mainMenu li a:hover {
   color: whitesmoke;
 }
 
@@ -352,7 +355,7 @@ footer {
   background-image: url(/img/employee-database.jpg);
     background-size: cover;
     background-position: center;
-    height: 600px;
+    height: 850px;
     opacity: .9;
   flex-direction: column;
   justify-content: center;
@@ -364,7 +367,7 @@ footer {
   background-image: url(/img/cover1.jpg);
     background-size: cover;
     background-position: center;
-    height: 600px;
+    height: 850px;
     opacity: .9;
   flex-direction: column;
   justify-content: center;
@@ -411,9 +414,6 @@ footer {
 /*MEDIA QUERIES TO MAKE THE DESIGN RESPONSIVE*/
 
 @media screen and (max-width: 768px) {
-  .hamburger {
-    display:block;
-  }
 
   .mainHeader {
     flex-direction: column;
@@ -423,5 +423,31 @@ footer {
   nav {
     flex-wrap: wrap;
     flex-direction: column;
+  }
+
+  .mainMenu {
+    width: 100%;
+    background-color: #004080;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .employeeBackground{
+    height: 700px;
+  }
+
+  .employeeContainer {
+    width: 100vw;
+  }
+
+  .hamburgerIcon {
+    display: block;
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+  .mainHeadline{
+    font-size: 45px;
   }
 }
