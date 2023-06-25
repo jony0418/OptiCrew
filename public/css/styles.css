@@ -182,76 +182,79 @@ body {
   animation: neon 1.5s ease-in-out infinite alternate;
   } */
 
-  @keyframes neon {
-    from {
-      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #0077e6, 0 0 30px #006be6, 0 0 40px #0400e6, 0 0 55px #007fe6, 0 0 75px #009de6;
-    }
-    to {
-      text-shadow: none;
-    }
-  }
-
 .navbarLogo {
     align-items: flex-start;
-    height: 60px;
+    height: 85px;
     width: auto;
     padding: 5px;
 
 }
 
+/* HAMBURGER STYLES */
 
-.mainHeader {
+.navBar {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background-image: linear-gradient(to right, var(--blue), var(--black));
+}
+
+.navbar-links ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar-links li {
+  list-style: none;
+}
+
+.navbar-links li a {
+  text-decoration: none;
+  font-size: xx-large;
   font-family: 'Bebas Neue', 'Lucida', 'Sans Serif';
-  align-items: center;
-  padding: 10px;
-  justify-content: flex-start;
-  background-image: linear-gradient(to bottom right, var(--blue), var(--black));
+  color: var(--gray);
+  padding: 1rem;
+  display: block;
 }
 
-nav {
-  display: flex;
-  align-items: center;
+.navbar-links li a:hover {
+  color: var(--blue);
 }
 
-.hamburger {
-  display: none; /* Hide the hamburger menu on larger screens */
+.toggle-button {
+  position: absolute;
+  top: 2rem;
+  right: 1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 31px;
+  height: 21px;
+}
+
+.toggle-button .bar {
+  height: 3px;
+  width: 100%;
+  background-color: var(--gray);
+  border-radius: 10px;
+}
+
+.hamburgerIcon {
+  display: none;
   cursor: pointer;
   padding: 10px;
 }
 
-.show {
-  display:flex
+.hidden {
+  display:none
 }
 
-.line {
+.hamburgerLine {
   width: 25px;
   height: 3px;
   background-color: var(--gray);
   margin: 5px 0;
-}
-
-.menu {
-  display: flex;
-  list-style-type: none;
-}
-
-.menu li {
-  margin-right: 10px;
-}
-
-.menu li a {
-  color: var(--black);
-  padding: 30px;
-  text-decoration: none;
-  letter-spacing: .2rem;
-  font-size: larger;
-  font-family: 'Bebas Neue', 'Lucida', 'Sans Serif';
-}
-
-.menu li a:hover {
-  color: whitesmoke;
 }
 
 footer {
@@ -352,7 +355,7 @@ footer {
   background-image: url(/img/employee-database.jpg);
     background-size: cover;
     background-position: center;
-    height: 600px;
+    height: 850px;
     opacity: .9;
   flex-direction: column;
   justify-content: center;
@@ -364,7 +367,7 @@ footer {
   background-image: url(/img/cover1.jpg);
     background-size: cover;
     background-position: center;
-    height: 600px;
+    height: 850px;
     opacity: .9;
   flex-direction: column;
   justify-content: center;
@@ -411,17 +414,41 @@ footer {
 /*MEDIA QUERIES TO MAKE THE DESIGN RESPONSIVE*/
 
 @media screen and (max-width: 768px) {
-  .hamburger {
-    display:block;
+  .toggle-button {
+    display: flex;
   }
 
-  .mainHeader {
-    flex-direction: column;
-    flex-wrap: wrap;
+  .navbar-links {
+    display: none;
+    width: 100%;
   }
 
-  nav {
-    flex-wrap: wrap;
+  .navBar {
     flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-links ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar-links li {
+    text-align: center;
+  }
+
+  .navbar-links li a {
+    padding: .5rem 1rem;
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+}
+
+/* ENSURES MAIN PAGE ANIMATION TO RENDER PROPERLY ON SMALLER SCREENS */
+@media screen and (max-width: 500px) {
+  .mainHeadline{
+    font-size: 45px;
   }
 }
