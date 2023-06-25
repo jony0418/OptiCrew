@@ -7,7 +7,7 @@ const loginFormHndler = async (event) => {
 
     if (email && password) {
         //send a POST request to the API endpoint
-        const response = await fetch('/api/users/login', {
+        const response = await fetch('/api/users/', {
             method: 'POST', 
             body: JSON.stringify({ email, password }),
             headers: { 'Content-Type': 'appication/json'},
@@ -15,7 +15,7 @@ const loginFormHndler = async (event) => {
 
         if (response.ok) {
          //if succesfull, redirect the browser to the profile page
-         document.location.replace(''); 
+         document.location.replace('/login'); 
         } else {
             alert(response.statusText); 
         }
