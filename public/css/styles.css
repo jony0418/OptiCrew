@@ -8,7 +8,7 @@ body {
     margin: 0;
     padding: 0;
     width: 100%;
-    font-family: sans-serif;
+    font-family: Monserrat, sans-serif;
     background: #34495e;
   }
 
@@ -91,6 +91,43 @@ body {
     color: #fff;
   }
 
+/*Styles for the index homepage*/
+
+.mainHeadline {
+  font-family: 'Bebas Neue', 'Monserrat', 'Lucida Sans';
+  position: relative;
+  font-size: 5rem;
+  color:var(--gray);
+  -webkit-text-stroke: .5px var(--black);
+  white-space: nowrap;
+  margin: 0;
+}
+
+.mainHeadline::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left:0;
+  width: 0;
+  height:100%;
+  color: var(--black);
+  -webkit-text-stroke: 0vw rgb(73, 73, 73);
+  border-right: 2px solid var(--gray);
+  overflow: hidden;
+  animation: animate 6s linear infinite;
+}
+
+@keyframes animate {
+0%,10%,100%
+{
+  width:0;
+}
+70%,90%
+{
+  width: 100%;
+}
+}
+
   /* Styles for the body of the homepage*/
   .backImg {
     background-image: url(/img/employee-database.jpg);
@@ -102,11 +139,21 @@ body {
 
 .backBox {
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 40px;
+  padding: 20px;
   border-radius: 10px;
   max-height: 200px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
+
+/* .backBox p {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  color: #777;
+  text-align: center;
+  background: linear-gradient(45deg, var(--black), var(--gray));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+} */
 
 .firstSection {
     display: flex;
@@ -114,8 +161,11 @@ body {
     justify-content: center;
     padding: 46px;
     text-align: center;
-    border-color: var(--gray);
-    border-style: dotted;
+    border-color: var(--black);
+    border-style: solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
     background-image: url(/img/cover1.jpg);
     background-size: cover;
     background-position: center;
@@ -123,14 +173,14 @@ body {
     opacity: .9;
   }
 
-  .firstSection h1 {
+  /* .firstSection h1 {
     font-size: 3rem;
   color: var(--black);
   text-align: center;
   text-transform: uppercase;
   font-family: 'Bebas Neue', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   animation: neon 1.5s ease-in-out infinite alternate;
-  }
+  } */
 
   @keyframes neon {
     from {
@@ -139,15 +189,6 @@ body {
     to {
       text-shadow: none;
     }
-  }
-
-  .firstSection p {
-  font-size: 1.5rem;
-  color: #777;
-  text-align: center;
-  background: linear-gradient(45deg, var(--blue), var(--gray));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   }
 
 .navbarLogo {
