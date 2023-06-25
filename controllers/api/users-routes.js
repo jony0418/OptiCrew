@@ -14,12 +14,15 @@ router.post('/', async (req, res) => {
         const user = await User.create(userData); 
 
         //return the created user as the response
-        return res.status(201).json(user); 
+        return res.status(200).json(user); 
     } catch (error) {
         console.log(error); 
         return res.status(500).json({ error: 'Failed to create user'}); 
     }
 }); 
+
+
+
 
 //get all user's email this function will not develop any function in the app its just for testing
 router.get('/', async (req, res) => {
