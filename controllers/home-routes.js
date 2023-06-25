@@ -15,7 +15,6 @@ router.get('/employee', async (req, res)=>{
 router.get('/login', (req, res) => {
   // Handle the home route logic
   res.render('login')
-  
 });
 
 router.get('/myprofile', (req, res) => {
