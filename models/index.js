@@ -53,4 +53,14 @@ Incident.hasMany(Assist, {
   foreignKey: 'id_incident',
 });
 
+Employee.hasOne(User, {
+  foreignKey: 'id_employee',
+  onDelete: 'CASCADE',
+});
+
+User.belongsTo(Employee, {
+  foreignKey: 'id_employee',
+  onDelete: 'CASCADE',
+});
+
 module.exports = { Employee, Department, User, Incident, Assist };
