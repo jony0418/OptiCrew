@@ -1,7 +1,7 @@
-const hamburger = document.querySelector('.hamburgerIcon');
-const menu = document.querySelector('.mainMenu');
+const hamburger = document.getElementsByClassName('toggle-button')[0]
+const navbarLinks = document.getElementsByClassName('navbar-links')[0]
 
-hamburger.addEventListener('click', function() {
-  menu.classList.toggle('hidden');
+hamburger.addEventListener('click', () =>{
+  navbarLinks.classList.toggle('active');
   console.log('hamburger activation!')
 });
