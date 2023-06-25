@@ -33,6 +33,13 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    employee_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'employee',
+        key: 'id',
+      },
+    },
   },
   {
     hooks: {
