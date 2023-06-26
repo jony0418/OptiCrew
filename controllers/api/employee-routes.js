@@ -6,7 +6,7 @@ const withAuth = require('../../utils/auth');
 
 
 //Get all employees
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     try {
         const employee = await Employee.findAll({
             include: [Department, Incident],
