@@ -77,18 +77,20 @@ router.post('/login', async (req, res) => {
 
     // If the user is found and the password is correct
     if (user && await user.checkPassword(password)) {
-      req.session.user = {
-        id: user.id,
-        username: user.username,
-        email: user.email,
-      };
+      // Set up sessions with a 'loggedIn' variable set to `true`
+      req.session.save(() => {
+        req.session.user_id = user.id;
+        req.session.logged_in = true;
+        req.session.username = user.username;
+        req.session.email = user.email;
+      });
       res.status(200).json({ message: 'Logged in successfully' });
     } else {
       res.status(401).json({ error: 'Invalid username or password' });
     }
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: 'Failed to login' });
+    res.status(500).json({ error: 'Failed to logiin' });
   }
 });
 

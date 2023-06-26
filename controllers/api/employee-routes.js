@@ -2,6 +2,9 @@ const router = require('express').Router();
 const express = require('express'); 
 const { Employee, Department, Incident, Assist } = require('../../models');
 
+const withAuth = require('../../utils/auth');
+
+
 //Get all employees
 router.get('/', async (req, res) => {
     try {
