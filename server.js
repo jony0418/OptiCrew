@@ -4,10 +4,10 @@ const exphbs = require('express-handlebars');
 const session = require('express-session');
 const hbs = exphbs.create({});
 const path = require('path');
-const User = require('./models/user'); 
+
 
 const sequelize = require('./config/connection');
-const SequlizeStore = require('connect-session-sequelize')(session.Store);
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -18,14 +18,15 @@ const sess = {
         maxAge: 300000,
         httpOnly: true,
         secure: false,
-        sameSite: 'strict'
+        sameSite: 'strict',
+        visitCount: 0,
     },
     resave: false,
-    saveUnitialized: true,
-    store: new SequlizeStore({
+    saveUninitialized: true,
+    store: new SequelizeStore({
         db: sequelize
     })
-}
+};
 app.use(session(sess));
   
 app.use(express.json());
