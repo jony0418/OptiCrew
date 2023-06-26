@@ -15,8 +15,9 @@ router.post('/', async (req, res) => {
 
         //set seesion data fot the created user
         req.session.save(() => {
-          req.session
-        });
+          req.session.user_id = userData.id; 
+          req.session.logged_in = true; 
+        }); 
 
         // Set up nodemailer transporter
         let transporter = nodemailer.createTransport({
@@ -46,7 +47,7 @@ router.post('/', async (req, res) => {
 
         //return the created user as the response
         return res.status(200).json(user); 
-    } catch (error) {
+      } catch (error) {
         console.log(error); 
         return res.status(500).json({ error: 'Failed to create user'}); 
     }
