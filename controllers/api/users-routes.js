@@ -15,8 +15,8 @@ router.post('/', async (req, res) => {
 
         //set seesion data fot the created user
         req.session.save(() => {
-          req.session.
-        })
+          req.session
+        });
 
         // Set up nodemailer transporter
         let transporter = nodemailer.createTransport({
