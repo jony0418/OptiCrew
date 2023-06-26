@@ -1,9 +1,10 @@
 const router = require('express').Router(); 
 const express = require('express'); 
-const { Employee, Department, Incident, Assist } = require('../../models'); 
+const { Employee, Department, Incident, Assist } = require('../../models');
+const authMiddleware = require('../../authMiddleware');  
 
 //Get all employees
-router.get('/', async (req, res) => {
+router.get('/', authMiddleware, async (req, res) => {
     try {
         const employee = await Employee.findAll({
             include: [Department, Incident],
@@ -16,7 +17,7 @@ router.get('/', async (req, res) => {
 });
 
 // create new employee
-router.post('/', async (req, res) => {
+router.post('/',authMiddleware, async (req, res) => {
     try {
         //get the employee data from the request body
         const employeeData = req.body; 
@@ -32,7 +33,7 @@ router.post('/', async (req, res) => {
 }); 
 
 //get by id 
-router.get('/:id', async (req, res) => {
+router.get('/:id', authMiddleware, async (req, res) => {
     try {
       const { id } = req.params;
   
@@ -51,7 +52,7 @@ router.get('/:id', async (req, res) => {
 });
 
 //update employee by id
-router.put('/:id', async (req, res) => {
+router.put('/:id', authMiddleware, async (req, res) => {
     try {
         const { id } = req.params; 
         const employeeData = req.body; 
