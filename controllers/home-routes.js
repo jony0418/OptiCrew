@@ -12,6 +12,10 @@ router.get('/employee', async (req, res)=>{
   res.render('employee')
 })
 
+router.get('/addEmployee', async (req, res)=>{
+  res.render('addEmployee')
+})
+
 router.get('/login', (req, res) => {
   // Handle the home route logic
   res.render('login')

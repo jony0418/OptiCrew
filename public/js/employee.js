@@ -1,5 +1,6 @@
 const printAllEmployees = async (event) => {
     event.preventDefault();
+    event.stopPropagation();
     console.log('this will print all employees');
     const response = await fetch('api/employee', {
         method: 'GET',
@@ -25,3 +26,13 @@ const printAllEmployees = async (event) => {
 const newEmployeeBtn = document.getElementById('appBtn');
 
 newEmployeeBtn.addEventListener('click', printAllEmployees);
+
+const addEmployeeBtn = document.getElementById('addEmployeeBtn');
+
+addEmployeeBtn.addEventListener('click', async (event) => {
+    // Redirect to the '/addEmployee' URL
+    event.preventDefault();
+    event.stopPropagation();
+    console.log('This will send no a new path to add an employee');
+    window.location.href = '/addEmployee';
+});
