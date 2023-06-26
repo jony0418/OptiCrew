@@ -14,6 +14,18 @@ router.get('/employee', withAuth, async (req, res)=>{
 })
 
 
+router.get('/addEmployee', async (req, res)=>{
+  res.render('addEmployee')
+})
+
+router.get('/login', (req, res) => {
+  // Handle the home route logic
+  res.render('login')
+});
+
+router.get('/searchEmployee', (req, res) => {
+  res.render('searchEmployee')
+});
 
 
 router.get('/login', (req, res) => {
