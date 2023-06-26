@@ -1,10 +1,76 @@
-/* 
-  header {
-    background-color: #0099FF;
-    padding: 40px;
+:root {
+  --blue: #0099FF;
+  --gray: #D3DBDD;
+  --black: black;
+}
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+  }
+  
+  table thead {
+    background-color: var(--blue);
+    color: #fff;
+  }
+  
+  table th, table td {
+    padding: 10px;
     text-align: center;
-  } */
+  }
   
+  table th {
+    font-weight: bold;
+  }
+  
+  table tbody tr:nth-child(even) {
+    background-color: var(--gray);
+  }
 
+  table tbody tr:nth-child(odd) {
+    background-color: rgb(153, 153, 153);
+  }
   
+  table tbody tr:hover {
+    background-color: #e0e782;
+  }
+  
+  table tbody td:first-child {
+    border-left: 1px solid #ddd;
+  }
+  
+  table tbody td:last-child {
+    border-right: 1px solid #ddd;
+  }
+  
+  .searchContainer {
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* height: 100vh; */
+    flex-direction: column;
+}
+
+#searchInput {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#searchButton {
+    margin-top: 8px;
+    padding: 8px 16px;
+    background-color: var(--blue);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#searchResults {
+    margin-top: 16px;
+}
+
   

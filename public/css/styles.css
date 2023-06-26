@@ -374,6 +374,18 @@ footer {
   align-items: center;
 }
 
+.searchBackground {
+  display: flex;
+  background-image: url(/img/cover1.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 850px;
+    opacity: .9;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 .signUpBackground {
   display: flex;
   background-image: url(/img/employee-database.jpg);
@@ -397,12 +409,22 @@ footer {
   align-items: center;
 }
 
-.employeeContainer {
+.employeeContainer, .searchEmpContainer {
   background-color: rgba(0, 0, 0, 0.5);
   padding: 40px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin-top: 15px;
+  color: whitesmoke;
 }
+
+/* .searchEmpContainer {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  color: #fff;
+} */
 
 .appCont {
   display: grid;

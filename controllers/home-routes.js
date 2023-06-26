@@ -21,8 +21,8 @@ router.get('/login', (req, res) => {
   res.render('login')
 });
 
-router.get('/myprofile', (req, res) => {
-  res.render('myprofile')
+router.get('/searchEmployee', (req, res) => {
+  res.render('searchEmployee')
 });
 
 // 
