@@ -1,7 +1,6 @@
 const router = require('express').Router(); 
-const express = require('express'); 
 const { User } = require('../../models'); 
-
+const nodemailer = require('nodemailer'); // Require nodemailer
 
 // create new user
 router.post('/', async (req, res) => {
@@ -13,11 +12,38 @@ router.post('/', async (req, res) => {
         //create a new user using the employee model 
         const user = await User.create(userData); 
 
+
         //set seesion data fot the created user
         req.session.save(() => {
           req.session.user_id = userData.id; 
           req.session.logged_in = true; 
         }); 
+
+        // Set up nodemailer transporter
+        let transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: 'opticrew730@gmail.com', // your gmail account
+                pass: 'opticrew12345678' // your gmail password
+            }
+        });
+
+        // Set up email data
+        let mailOptions = {
+            from: 'OptiCrew@gmail.com',
+            to: userData.email, 
+            subject: 'Welcome!', 
+            text: 'Welcome to our application!'
+        };
+
+        // Send the email
+        transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                return console.log(error);
+            }
+            console.log('Message sent: %s', info.messageId);   
+        });
+
 
         //return the created user as the response
         return res.status(200).json(user); 
@@ -25,7 +51,7 @@ router.post('/', async (req, res) => {
         console.log(error); 
         return res.status(500).json({ error: 'Failed to create user'}); 
     }
-}); 
+});
 
 //this route recives all the users (id, username, email and password) just for testing
 router.get('/users', async (req, res) => {
