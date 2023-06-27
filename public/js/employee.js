@@ -46,7 +46,9 @@ searchEmployeeBtn.addEventListener('click', async (event) => {
     window.location.href = '/searchEmployee';
 });
 
-const removeEmployeeBtn = document.getElementById('removeEmployeeBtn');
+
+
+const removeEmployeeBtn = document.getElementById('removeEmployee');
 
 removeEmployeeBtn.addEventListener('click', async (event) => {
     // Redirect to the '/addEmployee' URL
