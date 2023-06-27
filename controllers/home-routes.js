@@ -16,7 +16,7 @@ router.get('/employee', withAuth, async (req, res)=>{
 
 
 router.get('/addEmployee', async (req, res)=>{
-  res.render('addEmployee')
+  res.render('addEmployee',{username: req.session.username, logged_in: req.session.logged_in})
 })
 
 router.get('/login', (req, res) => {
@@ -25,11 +25,11 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/searchEmployee', (req, res) => {
-  res.render('searchEmployee')
+  res.render('searchEmployee',{username: req.session.username, logged_in: req.session.logged_in})
 });
 
 router.get('/removeEmployee', (req, res) => {
-  res.render('removeEmployee')
+  res.render('removeEmployee',{username: req.session.username, logged_in: req.session.logged_in})
 });
 
 router.get('/about-us', (req, res) => {
