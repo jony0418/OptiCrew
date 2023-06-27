@@ -1,62 +1,63 @@
-const router = require('express').Router(); 
-const { User } = require('../../models'); 
+const router = require('express').Router();
+const { User } = require('../../models');
 const nodemailer = require('nodemailer'); // Require nodemailer
 
-//         //set seesion data fot the created user
-//         req.session.save(() => {
-//           req.session.user_id = userData.id; 
-//           req.session.logged_in = true; 
-//         }); 
-
-//         // Set up nodemailer transporter
-//         let transporter = nodemailer.createTransport({
-//             service: 'gmail',
-//             auth: {
-//                 user: 'opticrew730@gmail.com', // your gmail account
-//                 pass: 'opticrew12345678' // your gmail password
-//             }
-//         });
-
-//         // Set up email data
-//         let mailOptions = {
-//             from: 'OptiCrew@gmail.com',
-//             to: userData.email, 
-//             subject: 'Welcome!', 
-//             text: 'Welcome to our application!'
-//         };
-
-//         // Send the email
-//         transporter.sendMail(mailOptions, (error, info) => {
-//             if (error) {
-//                 return console.log(error);
-//             }
-//             console.log('Message sent: %s', info.messageId);   
-//         });
-
-
-//         //return the created user as the response
-//         return res.status(200).json(user); 
-//       } catch (error) {
-//         console.log(error); 
-//         return res.status(500).json({ error: 'Failed to create user'}); 
-//     }
-// });
 router.post('/', async (req, res) => {
+  console.log('Request received to create a new user', req.body);
+  
   try {
-    const userData = await User.create(req.body); 
-    
+    const userData = await User.create(req.body);
+
+    console.log('User created:', userData);
+
     req.session.save(() => {
-      req.session.user_id = userData.id; 
-      req.session.logged_in = true; 
+      console.log('Saving session data for user');
+
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
       req.session.username = userData.username;
-      res.status(200).json(userData); 
-    }); 
+
+      console.log('Session data saved');
+
+      // Set up nodemailer transporter
+      let transporter = nodemailer.createTransport({
+          service: 'gmail',
+          auth: {
+              user: 'opticrew730@gmail.com', // your account
+              pass: 'zeiecjjszruwfcod' // your password, we use a token here instead of a password
+          }
+      });
+
+      console.log('Transporter set up');
+
+      // Set up email data
+      let mailOptions = {
+          from: 'OptiCrew730@gmail.com',
+          to: userData.email,
+          subject: 'Welcome!',
+          text: 'Welcome to our application!'
+      };
+
+      console.log('Mail options set up');
+
+      // Send the email
+      transporter.sendMail(mailOptions, (error, info) => {
+          if (error) {
+              console.log('Error sending mail:', error);
+              return;
+          }
+          console.log('Message sent: %s', info.messageId);
+      });
+
+      console.log('Email sent');
+
+      res.status(200).json(userData);
+    });
   } catch (err) {
-    res.status(400).json(err); 
+    console.log('Error creating user:', err);
+    res.status(400).json(err);
   }
-}); 
-
-
+});
 
 //this route recives all the users (id, username, email and password) just for testing
 router.get('/users', async (req, res) => {
