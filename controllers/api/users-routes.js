@@ -35,8 +35,9 @@ router.post('/', async (req, res) => {
           from: 'OptiCrew730@gmail.com',
           to: userData.email,
           subject: 'Welcome!',
-          text: 'Welcome to our application!'
+          text: `Welcome ${userData.username}, to our application! We hope you enjoy your stay! - The OptiCrew Team`
       };
+
 
       console.log('Mail options set up');
 
