@@ -26,10 +26,9 @@
             <li><a href="/about-us">About OptiCrew</a></li>
             <li><a href="/signup">Signup</a></li>
             <li><a href="/login" id="login">Login</a></li>
-          {{!-- {{#if logged_in}} --}}
-            <li><a href="/logout" id="logout">Logout</a></li>
-          {{!-- {{else}} --}}
-          {{!-- {{/if}} --}}
+          {{#if logged_in}}
+            <li><a href="#" id="logout">Logout</a></li>
+          {{/if}}
           {{!-- <div class="closeMenu">X
             <span></span>
           </div> --}}

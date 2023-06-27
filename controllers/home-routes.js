@@ -10,7 +10,8 @@ router.get('/', (req, res) => {
 
 // Gets all employees currently registered on the DB (For Administrators Only)
 router.get('/employee', withAuth, async (req, res)=>{
-  res.render('employee')
+  console.log(req.session);
+  res.render('employee',{username: req.session.username, logged_in: req.session.logged_in})
 })
 
 

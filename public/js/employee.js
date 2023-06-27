@@ -2,7 +2,7 @@ const printAllEmployees = async (event) => {
     event.preventDefault();
     event.stopPropagation();
     console.log('this will print all employees');
-    const response = await fetch('api/employee', {
+    const response = await fetch('/api/employee', {
         method: 'GET',
         headers: {'Content-Type': 'application/json'}
     });
@@ -33,6 +33,7 @@ addEmployeeBtn.addEventListener('click', async (event) => {
     // Redirect to the '/addEmployee' URL
     event.preventDefault();
     event.stopPropagation();
+    console.log('Add employee!');
     window.location.href = '/addEmployee';
 });
 
