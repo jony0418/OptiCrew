@@ -145,6 +145,8 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
+
+
 /* .backBox p {
   text-transform: uppercase;
   font-size: 1.5rem;
@@ -355,7 +357,7 @@ footer {
   background-image: url(/img/employee-database.jpg);
     background-size: cover;
     background-position: center;
-    height: 850px;
+    height: auto;
     opacity: .9;
   flex-direction: column;
   justify-content: flex-start;
@@ -379,7 +381,7 @@ footer {
   background-image: url(/img/cover1.jpg);
     background-size: cover;
     background-position: center;
-    height: 850px;
+    height: auto;
     opacity: .9;
   flex-direction: column;
   justify-content: flex-start;
@@ -415,7 +417,26 @@ footer {
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   margin-top: 15px;
+  margin-bottom: 10px;
   color: whitesmoke;
+}
+
+.aboutUsContainer {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin-top: 15px;
+  margin-bottom: 10px;
+  color: whitesmoke;
+  font-style: Monserrat;
+  font-size: large;
+  text-align: center;
+  width: 90%;
+}
+
+.aboutUsContainer p {
+  text-align: center;
 }
 
 /* .searchEmpContainer {
@@ -538,6 +559,10 @@ footer {
     min-width: 380px;
     padding: 1em;
     font-size: small;
+  }
+
+  .aboutUsContainer {
+    width: fit-content;
   }
 }
 
