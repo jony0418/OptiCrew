@@ -16,7 +16,7 @@ searchButton.addEventListener('click', async () => {
         const data = await response.json();
         currentEmployeeId = data.id;
         deleteButton.disabled = false;
-        searchResults.textContent = `Employee found: ${data.name} ${data.lastName}. Click 'Delete' to remove this employee.`;
+        searchResults.textContent = `Employee found: ${data.name} ${data.lastName}. WARNING: Click 'Delete' to remove this employee.`;
     } else {
         searchResults.textContent = 'No employee found.';
         deleteButton.disabled = true;
