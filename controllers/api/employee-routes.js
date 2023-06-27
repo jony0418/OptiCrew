@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
         const employee = await Employee.findAll({
             include: [Department, Incident],
         });
-        res.render('employee', {employee}); 
+        // res.render('employee', {employee}); 
         res.status(200).json(employee); 
     } catch (error) {
         res.status(500).json({ error: 'Failed to retrieve employees'}); 
