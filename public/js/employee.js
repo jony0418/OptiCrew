@@ -45,3 +45,12 @@ searchEmployeeBtn.addEventListener('click', async (event) => {
     event.stopPropagation();
     window.location.href = '/searchEmployee';
 });
+
+const removeEmployeeBtn = document.getElementById('removeEmployeeBtn');
+
+removeEmployeeBtn.addEventListener('click', async (event) => {
+    // Redirect to the '/addEmployee' URL
+    event.preventDefault();
+    event.stopPropagation();
+    window.location.href = '/removeEmployee';
+});

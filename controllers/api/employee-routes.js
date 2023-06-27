@@ -53,6 +53,27 @@ router.get('/:id', async (req, res) => {
     }
 });
 
+//delete employee by id
+router.delete('/:id', async (req, res) => {
+    try {
+        const { id } = req.params; 
+
+        //find the employee by id
+        const employee = await Employee.findByPk(id);
+
+        if (!employee) {
+            return res.status(404).json({ error: 'Employee not found' });
+        }
+        await employee.destroy();
+
+        return res.status(200).json({ message: 'Employee deleted successfully' });
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({ error: 'Failed to delete employee'});
+    }
+});
+
+
 //update employee by id
 router.put('/:id', async (req, res) => {
     try {
