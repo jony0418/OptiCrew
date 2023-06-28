@@ -35,7 +35,8 @@ router.post('/', async (req, res) => {
           from: 'OptiCrew730@gmail.com',
           to: userData.email,
           subject: 'Welcome!',
-          text: `Welcome ${userData.username}, to our application! We hope you enjoy your stay! - The OptiCrew Team`
+          text: `Welcome ${userData.username}, to our application! We hope you enjoy your stay! - The OptiCrew Team 
+          https://opticrew-fe0f9781ad3c.herokuapp.com`
       };
 
 
